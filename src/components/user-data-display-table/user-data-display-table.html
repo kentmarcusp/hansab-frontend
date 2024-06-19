@@ -1,0 +1,39 @@
+
+<app-search-bar (searchEvent)="performSearch($event)"></app-search-bar>
+
+<table id="example" class="table table-striped" style="width:100%">
+    <thead id="table-header">
+        <tr>
+            <th class="col" (click)="sortUsers()">Username <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col text-center">Car count</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td style="text-align: center;">{{ user.cars.length }}</td>
+          <td colspan="4" style="text-align: right;">
+            <button type="button" class="btn btn-primary" (click)="navigateToCarDisplay()"> 
+              Display Car Data &nbsp; <i class="fa fa-chevron-right"></i>
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="users.length == 0">
+            <td colspan="6">{{ users.length === 0 ? 'No data to display.' : '' }}</td>
+        </tr>
+      </tbody>
+    <tfoot>
+        <tr>
+            <th class="col" (click)="sortUsers()">Username <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col text-center">Car count</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

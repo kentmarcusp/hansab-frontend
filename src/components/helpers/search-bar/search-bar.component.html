@@ -1,0 +1,9 @@
+<br>
+<div class="d-flex justify-content-end">
+    <div class="input-group mb-3" style="width: 33%;">
+        <input type="text"  class="form-control" placeholder="Search..." [(ngModel)]="searchTerm" (keydown)="handleSearchBarKeyPress($event)">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" style="font-weight: bold; color: black;" type="button" id="button-search" (click)="search()">Search</button>
+        </div>
+    </div>
+</div>

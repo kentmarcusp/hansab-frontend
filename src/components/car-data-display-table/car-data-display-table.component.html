@@ -1,0 +1,37 @@
+
+<app-search-bar (searchEvent)="performSearch($event)"></app-search-bar>
+<table id="example" class="table table-striped" style="width:100%">
+    <thead id="table-header">
+        <tr>
+            <th class="col" (click)="sortCars('make')">Car make <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col" (click)="sortCars('model')">Car model <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col">Numberplate</th>
+            <th></th>
+            <th></th>
+            <th>Owner</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars">
+            <td>{{ car.make }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.numberPlate }}</td>
+            <td></td>
+            <td></td>
+            <td>{{ car.user_account.username }}</td>
+        </tr>
+        <tr *ngIf="cars.length == 0">
+            <td colspan="6">{{ cars.length === 0 ? 'No data to display.' : '' }}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="col" (click)="sortCars('make')">Car make <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col" (click)="sortCars('model')">Car model <i class="fa fa-fw fa-sort"></i></th>
+            <th class="col">Numberplate</th>
+            <th></th>
+            <th></th>
+            <th>Owner</th>
+        </tr>
+    </tfoot>
+</table>
