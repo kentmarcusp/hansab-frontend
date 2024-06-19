@@ -21,7 +21,7 @@ npm install -g @angular/cli@18.0.3
 Clone the project repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/kentmarcusp/hansab-frontend.git
 cd hansab-frontend
 ```
 
